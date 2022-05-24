@@ -1,0 +1,15 @@
+server:
+  port: 9003
+spring:
+  application:
+    name: consumerzk-oeder9003
+  datasource:
+    druid:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: org.gjt.mm.mysql.Driver
+      url: jdbc:mysql://103.89.185.155:3336/pingpu_homestead_dev?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      username: mydev
+      password: ucPzaNuKNh9nIt3
+  cloud:
+    zookeeper:
+      connect-string: 101.201.70.231:2181

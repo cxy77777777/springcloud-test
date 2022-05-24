@@ -1,0 +1,22 @@
+server:
+  port: 7002
+
+spring:
+  application:
+    name: cloud-eureka-server7002
+
+eureka:
+  instance:
+    hostname: localhost #主机名，不配置的时候将根据操作系统的主机名来获取
+    prefer-ip-address: true #是否使用ip地址注册
+    instance-id: 192.168.170.97:${server.port} #ip地址注册
+  client:
+    register-with-eureka: true #是否将自己注册到注册中心，默认为true，单节点需要关闭，多节点开启
+    fetch-registry: true        #是否从注册中心获取注册信息，默认为true，单节点需要关闭，多节点开启
+    registry-fetch-interval-seconds: 30 #默认每隔30s执行一次刷新任务
+    service-url:
+      #注册中心对外暴漏的注册地址
+      defaultZone: http://localhost:7001/eureka/
+  server:
+    enable-self-preservation: false #false关闭自我保护机制，保证不可用服务被及时剔除,默认为true
+    eviction-interval-timer-in-ms: 2000 #服务不可用后，间隔2s后被剔除，单位s
