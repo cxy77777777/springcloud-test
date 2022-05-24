@@ -22,7 +22,7 @@ public class PaymentController {
 
     @GetMapping("/getData")
     public CommonResult<Payment> getData(){
-        log.info("获取数据");
+        log.info("获取数据。");
         return  new CommonResult(200,"success",restTemplate.getForObject(HTTPHOST + "/api/getData",CommonResult.class));
     }
 }
