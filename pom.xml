@@ -21,6 +21,7 @@
         <module>cloud-provider-consul-payment8006</module>
         <module>cloud-consumer-consul-order9004</module>
         <module>cloud-consumer-ribbon-order9005</module>
+        <module>cloud-consumer-feign-order9006</module>
     </modules>
 
     <properties>

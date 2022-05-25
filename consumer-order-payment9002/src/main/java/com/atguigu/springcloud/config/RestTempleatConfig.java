@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 public class RestTempleatConfig {
 
     @Bean
-    @LoadBalanced //远程调用服务方式三：Ribbon负载均衡器注解
+//    @LoadBalanced //远程调用服务方式三：Ribbon负载均衡器注解（手写负载均衡算法，需把这行注释掉）
     public RestTemplate restTemplate(){
         return new RestTemplate();
     }
