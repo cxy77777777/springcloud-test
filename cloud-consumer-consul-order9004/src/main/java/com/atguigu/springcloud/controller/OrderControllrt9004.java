@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 import javax.annotation.Resource;
 
 /**
- * consul
+ * consul.。
  */
 @RestController
 @RequestMapping("consul/")
