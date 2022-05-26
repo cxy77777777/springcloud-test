@@ -1,0 +1,31 @@
+server:
+  port: 8007
+
+spring:
+  application:
+    name: cloud-provider-hystrix-payment
+  datasource:
+    druid:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: org.gjt.mm.mysql.Driver
+      url: jdbc:mysql://103.89.185.155:3336/pingpu_homestead_dev?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      username: mydev
+      password: ucPzaNuKNh9nIt3
+
+eureka:
+  instance:
+    prefer-ip-address: true #是否使用ip地址注册
+    instance-id: 192.168.170.97:${server.port} #ip地址注册
+    lease-renewal-interval-in-seconds: 30 #eureka客户端向服务端发送心跳的时间间隔，单位为秒（默认30s）
+    lease-expiration-duration-in-seconds: 90 #eureka服务端在收到最后一次心跳后等待时间上限，单位为秒（默认为90s），超时将剔除服务
+  client:
+    register-with-eureka: true #true表示向注册中心注册自己
+    fetch-registry: true #需要去检索服务
+    registry-fetch-interval-seconds: 30 #默认每隔30s执行一次刷新任务
+    service-url:
+      #设置与eureka Server交互的地址查询服务和注册服务都需要依赖这个地址
+      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka
+
+mybatis:
+  mapperLocaltions: classpath:mapper/*.xml
+  type-aliases-package: com.atguigu.springcloud.entites
