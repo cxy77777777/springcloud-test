@@ -26,6 +26,10 @@ ribbon:
   ReadTimeout: 2000 #指的是建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的时间
   ConnectTimeout: 2000  #指的是建立连接后从服务器读取到可用资源所用的时间
 
+feign:
+  okhttp:
+    enabled: true
+
 logging:
   level:
     com.atguigu.springcloud.service.PaymentService: debug #feign日志以什么级别，监控那个接口
